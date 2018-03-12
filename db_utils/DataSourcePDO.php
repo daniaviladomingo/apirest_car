@@ -33,7 +33,8 @@
 			$this->connect();
 			if (!empty($query) && $this->dbh != null) {
 				$stmt = $this->dbh->prepare($query);
-				return $stmt->execute($params)->rowCount();
+				$stmt->execute($params);
+				return $stmt->rowCount();
 			} else {
 				return -1;
 			}

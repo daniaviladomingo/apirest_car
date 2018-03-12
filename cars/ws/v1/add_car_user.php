@@ -1,5 +1,6 @@
 <?php
-	require_once('../ws_utils.php');	
+	require_once('../ws_utils.php');
+	require_once('../../db/dao_factory/MySqlDaoFactory.php');	
 
 	if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		

@@ -2,8 +2,9 @@
 	abstract class AbstractDaoFactory{
 		
 		public function getDao($type) {
-			$dao = selectDao($type);
-			$dao->setDb(getDataSource());
+			$dao = $this->selectDao($type);
+			$dao->setDb($this->getDataSource());
+			return $dao;
 		}
 		
 		abstract protected function selectDao($type);

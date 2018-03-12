@@ -1,5 +1,5 @@
-<?php
-	require_once('/var/www/html/db_utils/DataSourcePDO.php');
+<?php	
+	require_once('../../../db_utils/DataSourcePDO.php');
 
 	class MySqlDataSource extends DataSourcePDO {		
 		protected function driver()   { return "mysql";     }									

@@ -1,6 +1,6 @@
 <?php
-	require_once('IUserDao.php');
-	require_once('/var/www/html/db_utils/BaseDao.php');
+	require_once('IUserDao.php');	
+	require_once('../../../db_utils/BaseDao.php');	
 	
 	class UserDao extends BaseDao implements IUserDao {
 		

@@ -1,9 +1,9 @@
-<?php	
-	require_once('/var/www/html/db_utils/AbstractDaoFactory.php');
-	require_once('../data_source/MySqlDataSource.php');
-	require_once('dao/DaoEnum.php');
-	require_once('dao/user/UserDao.php');
-	require_once('dao/user/CarDao.php');
+<?php
+	require_once('../../../db_utils/AbstractDaoFactory.php');		
+	require_once(dirname(__DIR__).'/data_source/MySqlDataSource.php');	
+	require_once(dirname(__DIR__).'/dao/DaoEnum.php');
+	require_once(dirname(__DIR__).'/dao/user/UserDao.php');
+	require_once(dirname(__DIR__).'/dao/car/CarDao.php');
 	
 	class MySqlDaoFactory extends AbstractDaoFactory {
 				
@@ -21,7 +21,7 @@
 		}
 		
 		protected function getDataSource() {
-			return new MySqlDataSource()
+			return new MySqlDataSource();
 		}
 	}
 ?>
