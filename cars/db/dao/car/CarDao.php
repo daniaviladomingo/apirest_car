@@ -6,7 +6,8 @@
 		
 		public function getUserCars($id_user) {
 			return $this->db()->query("SELECT 
-										brand, 
+										users.id AS id_user,
+										cars_brand.name AS brand,
 										model 
 									FROM 
 										users, 
@@ -14,14 +15,14 @@
 										cars, 
 										cars_brand 
 									WHERE 
-										users.id              = cars_to_user.id_user AND 
-										cars_to_user.id_car   = cars.id              AND 
-										cars.brand            = cars_brand.id        AND 
-										users.id              = ?", array($id_user));
+										users.id            = cars_to_user.id_user AND 
+										cars_to_user.id_car = cars.id              AND 
+										cars.id_brand       = cars_brand.id        AND 
+										users.id            = ?", array($id_user));
 		}
 		
 		public function getCars() {
-			return $this->db()->query("SELECT cars.id, cars.model, cars.brand, cars_brand.name FROM cars, cars_brand WHERE cars.brand = cars_brand.id");
+			return $this->db()->query("SELECT cars.id AS id_car, cars.model, cars_brand.name AS brand FROM cars, cars_brand WHERE cars.id_brand = cars_brand.id");
 		}
 		
 		public function deleteUserCar($id_user, $id_car) {
@@ -34,7 +35,6 @@
 		
 		public function addUserCar($id_user, $id_car) {
 			return $this->db()->update("INSERT INTO cars_to_user (id_user, id_car) VALUES (?, ?)", array($id_user, $id_car));
-		}
-		
+		}		
 	}
 ?>

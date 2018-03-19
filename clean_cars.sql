@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-03-2018 a las 09:57:14
+-- Tiempo de generación: 19-03-2018 a las 09:59:19
 -- Versión del servidor: 10.0.34-MariaDB-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.25-0ubuntu0.16.04.1
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cars` (
   `id` int(11) NOT NULL,
-  `brand` int(11) NOT NULL,
+  `id_brand` int(11) NOT NULL,
   `model` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -36,7 +36,7 @@ CREATE TABLE `cars` (
 -- Volcado de datos para la tabla `cars`
 --
 
-INSERT INTO `cars` (`id`, `brand`, `model`) VALUES
+INSERT INTO `cars` (`id`, `id_brand`, `model`) VALUES
 (3, 1, 'C4'),
 (4, 1, 'C5'),
 (5, 2, '206'),
@@ -125,7 +125,7 @@ INSERT INTO `users` (`id`, `name`, `password`) VALUES
 ALTER TABLE `cars`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `model` (`model`),
-  ADD KEY `marca` (`brand`);
+  ADD KEY `marca` (`id_brand`);
 
 --
 -- Indices de la tabla `cars_brand`
